@@ -1,11 +1,13 @@
 import React from 'react';
+import { Header } from "./components/layouts/Header";
+import { Content } from "./components/layouts/Content";
+
 
 export const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Hello!</p>
-      </header>
+      <Header />
+      <Content />
     </div>
   );
 }
