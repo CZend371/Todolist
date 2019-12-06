@@ -20,7 +20,7 @@ export const AddProject = ({ shouldShow = false }) => {
             .add({
                 projectId,
                 name: projectName,
-                userId: 'mCXZGeQBgIGtPl9LtGHp'
+                userId: '11'
             })
             .then(() => {
                 setProjects([]);
@@ -58,6 +58,14 @@ export const AddProject = ({ shouldShow = false }) => {
                    </span>
                 </div>
             )}
+            <span className="add-project__plus">+</span>
+            <span
+                data-testid="add-project-action"
+                className="add-project__text"
+                onClick={() => setShow(!show)}
+            >
+                Add Project
+            </span>
         </div>
     )
 };
