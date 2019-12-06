@@ -4,9 +4,9 @@ import moment from "moment";
 import { firebase } from "../firebase";
 import { useSelectedProjectValue } from "../context";
 
-export const AddTask({
+export const AddTask = ({
     showAddTaskMain = true,
-    showShouldMain = false,
+    shouldShowMain = false,
     showQuickAddTask,
     setShowQuickAddTask,
 }) => {
@@ -69,4 +69,4 @@ export const AddTask({
             )}
         </div>
     );
-}
+};
