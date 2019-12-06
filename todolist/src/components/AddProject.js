@@ -41,6 +41,21 @@ export const AddProject = ({ shouldShow = false }) => {
                         type="text"
                         placeholder="Name your project"
                     />
+                    <button
+                        className="add-project__submit"
+                        type="button"
+                        onClick={() => addProject()}
+                        data-testid="add-project-submit"
+                    >
+                        Add Project
+                    </button>
+                    <span
+                        data-testid="hide-project-overlay"
+                        className="add-project__cancel"
+                        onClick={() => setShow(false)}
+                    >
+                        Cancel
+                   </span>
                 </div>
             )}
         </div>
