@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ProjectOverlay } from "./ProjectOverlay";
+import { TaskDate } from "./TaskDate";
 import { FaRegListAlt, FaRegCalendarAlt } from "react-icons/fa";
 import moment from "moment";
 import { firebase } from "../firebase";
@@ -90,8 +92,16 @@ export const AddTask = ({
                     )}
                 </div>
             )}
-            <p>Project overlay here</p>
-            <p>Task Date here</p>
+            <ProjectOverlay
+                setProject={setProject}
+                showProjectOverlay={showProjectOverlay}
+                setShowProjectOverlay={setShowProjectOverlay}
+            />
+            <TaskDate
+                setTaskDate={setShowTaskDate}
+                showTaskDate={showTaskDate}
+                setShowTaskDate={setShowTaskDate}
+            />
             <input
                 className="add-task__content"
                 data-testid="add-task-content"
