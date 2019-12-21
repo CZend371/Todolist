@@ -109,7 +109,7 @@ export const AddTask = ({
                 setShowProjectOverlay={setShowProjectOverlay}
             />
             <TaskDate
-                setTaskDate={setShowTaskDate}
+                setTaskDate={setTaskDate}
                 showTaskDate={showTaskDate}
                 setShowTaskDate={setShowTaskDate}
             />
