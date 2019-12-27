@@ -5,6 +5,7 @@ import { FaRegListAlt, FaRegCalendarAlt } from "react-icons/fa";
 import moment from "moment";
 import { firebase } from "../firebase";
 import { useSelectedProjectValue } from "../context";
+import PropTypes from 'prop-types';
 
 export const AddTask = ({
     showAddTaskMain = true,
@@ -115,6 +116,7 @@ export const AddTask = ({
             />
             <input
                 className="add-task__content"
+                aria-label="Enter your task"
                 data-testid="add-task-content"
                 type="text"
                 value={task}
@@ -124,7 +126,9 @@ export const AddTask = ({
                 type="button"
                 className="add-task__submit"
                 data-testid="add-task"
-                onClick={() => showQuickAddTask ? setShowQuickAddTask(false) && addTask() : addTask()}
+                onClick={() => showQuickAddTask
+                    ? addTask() && setShowQuickAddTask(false)
+                    : addTask()}
             >
                 Add Task
                 </button>
@@ -140,6 +144,7 @@ export const AddTask = ({
                         setShowMain(false);
                         setShowProjectOverlay(false);
                     }}
+                    aria-label="Cancel adding a task"
                     tabIndex={0}
                     role="button"
                 >
@@ -170,4 +175,11 @@ export const AddTask = ({
             </span>
         </div>
     );
+};
+
+AddTask.propTypes = {
+    showAddTaskMain: PropTypes.bool,
+    shouldShowMain: PropTypes.bool,
+    showQuickAddTask: PropTypes.bool,
+    setShowQuickAddTask: PropTypes.func,
 };
