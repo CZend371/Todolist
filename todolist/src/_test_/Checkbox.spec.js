@@ -22,7 +22,7 @@ describe('<Checkbox/>', () => {
             const { queryByTestId } = render(
                 <CheckBox id="1" taskDesc="finish this tutorial series!" />
             );
-            debug();
+            expect(queryByTestId('checkbox-action')).toBeTruthy();
         });
     });
 });
