@@ -24,5 +24,22 @@ describe('<Checkbox/>', () => {
             );
             expect(queryByTestId('checkbox-action')).toBeTruthy();
         });
+
+        it('renders the task checkbox and accepts Onclick', () => {
+            const { queryByTestId } = render(
+                <CheckBox id="1" taskDesc="Finish this tutorial series!" />
+            );
+            expect(queryByTestId('checkbox-action')).toBeTruthy();
+            fireEvent.click(queryByTestId('checkbox-action'));
+            console.group(fireEvent);
+        });
+
+        it('renders the task checkbox and accepts onKeyDown', () => {
+            const { queryByTestId } = render(
+                <CheckBox id="1" taskDesc="Finish this tutorial series!" />
+            );
+            expect(queryByTestId('checkbox-action')).toBeTruthy();
+            fireEvent.keyDown(queryByTestId('checkbox-action'));
+            console.group(fireEvent);
+        });
     });
-});

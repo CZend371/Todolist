@@ -8,4 +8,9 @@ describe('<App />', () => {
         const { queryByTestId } = render(<App />);
         expect(queryByTestId('application')).toBeTruthy();
     });
+
+    it('renders the application using dark mode', () => {
+        const { queryByTestId } = render(<App darkmodeDefault />);
+        expect(queryByTestId('application')).toBeTruthy();
+    });
 })
