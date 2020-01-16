@@ -40,6 +40,5 @@ describe('<Checkbox/>', () => {
             );
             expect(queryByTestId('checkbox-action')).toBeTruthy();
             fireEvent.keyDown(queryByTestId('checkbox-action'));
-            console.group(fireEvent);
         });
     });
